@@ -7,8 +7,9 @@ var links = package.getDownloadLinks() ? package.getDownloadLinks() : []
 
 function isReallyFinished() {
 	for (var i = 0; i < links.length; i++) {
-		if (links[i].getArchive() != null && links[i].getExtractionStatus() != "SUCCESSFUL" || !package.isFinished()) {
+		if (links[i].getArchive() != null && links[i].getExtractionStatus() != "SUCCESSFUL") {
 			return false
+			break
 		}
 	}
 	return true
